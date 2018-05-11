@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="c2.css">
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse">
+<div class="row">
+	<div class="col-xs-18 col-sm-6 col-md-5">
+	<ul class="nav nav-pills">
+  	<li ><a href="/">Home</a></li>
+  	
+  	
+	</ul>
+	</div>
+	<div class="col-xs-18 col-sm-6 col-md-7">
+		<form class="f" method="get" action="/loginsubmit">
+	<div class="form-group f1">
+    	<label for="Name" style="color: white">Name:</label><!--class="glyphicon glyphicon-search" rel="tooltip" title="email"-->
+    
+    	<input type="text" class="form-control" id="Name" name="name" placeholder="name " required>
+    	<!--label for="email" class="glyphicon glyphicon-search" rel="tooltip" title="email"--><!--/label-->
+    	
+ 	</div>
+	<div class="form-group f1">
+    		<label for="exampleInputPassword1" style="color: white">Password</label>
+    		<input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" required>
+  </div>
+  <input type="submit" class="btn btn-default p" style="background-color: #4267b2;color: white;border-color:#4267b2"></input>
+		</form>
+	</div>
+</div>
+</nav>
+
+
+
+
+<div class="row">
+	<div class="col-md-7 l">	
+	</div>
+	<div class="col-md-5 r">
+		<form method="get" action="/signupsubmit">
+	<h1><b>Create an account</b></h1>
+  <div class="form-group">
+    <label for="Firstname">Firstname:</label>
+    <input type="text" class="form-control" id="Firstname" name="firstname" placeholder="enter your name" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1"  name="email" placeholder="Email" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="pwd" placeholder="Password" required>
+  </div>
+  <div class="form-group">
+  	<label>Mobile</label>
+  	<input type="number" class="form-control" name="mobile" placeholder="+91" required>
+  </div>
+ 
+<button type="submit" class="btn btn-default">Create an account</button>
+</form>
+	</div>
+</div>
+
+
+
+<div id="footer">
+<ul>
+		<li><a href="">About us</a></li>
+		<li><a href="">messaging service</a></li>
+		<li><a href="">Help</a></li>
+		<li><a href="">Contact us</a></li>
+	</ul>
+		
+</div>
+
+
+</body>
+</html>

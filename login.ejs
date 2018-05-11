@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="c2.css">
+</head>
+<body style="background-color: #8bb18b">
+
+<nav class="navbar navbar-inverse">
+<div class="row">
+	<div class="col-xs-18 col-sm-6 col-md-5">
+	<ul class="nav nav-pills">
+  	<li role="new2.ejs"><a href="/">Home</a></li>
+  	
+  	
+	</ul>
+	</div>
+
+
+<% for(var i=0;i<result1.length;i++){%>
+	<h1>welcome to login page <%= result1[i].name%> </h1>
+	<h2>click to chat with a frnd</h2>
+<%}%>
+
+<% for(var i=0;i<result2.length;i++){%>
+<a href="/chat/<%=result2[i].name%>" type="submit" style="width:500" class="btn btn-default btn-xs" role="button"><li><%= result2[i].name%></li></a><br><br>
+<%}%>
+
+</body>
+</html>

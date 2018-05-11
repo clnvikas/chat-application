@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>chat</title>
+	<style type="text/css">
+		body{
+			background:#f9f9f9;
+			font-family: "Times New Roman", Georgia, Serif;
+			background-color: #579b95 ;
+		}
+		div.container{
+			width:700px;
+			margin:0 auto;
+		}
+		
+		#chatWrapper{
+			float:left;
+			border:1px #ccc solid;
+			border-radius: 10px;
+			background:#f4f4f4;
+			padding:10px;
+		}
+		#chatWindow{
+			height:300px;
+		}
+		input{
+			height:30px;
+			border:solid 1px #ccc;
+		}
+
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<div id="mainWrapper">
+			<h2 style="color: white;">I am chatting with <%=JSON.stringify(result[0].name) %></h2>
+			<div id="chatWrapper">
+				<div id="chatWindow"></div>
+				<form id="messageForm">
+					<input type="text" size="35" id="message" placeholder="Say Something...">
+					<input type="submit" class="btn btn-danger btn-xs" value="Submit">
+				</form>
+			</div>
+	</div>
+</div>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+			$(function(){
+				var socket = io.connect();
+				var $messageForm = $('#messageForm');
+				var $message = $('#message');
+				var $chatWindow =$('#chatWindow');
+
+				
+				
+				$messageForm.submit(function(e){
+					e.preventDefault();
+					socket.emit('send message',$message.val());
+					$message.val('');
+				});
+				socket.on('new message',function(data){
+					
+					$chatWindow.append('<strong>'+data.msg+'</strong>'+'<br>')
+				})
+			});
+
+		</script>
+
+</body>
+</html>
